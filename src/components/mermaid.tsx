@@ -7,8 +7,22 @@ mermaid.initialize({
   theme: "dark",
   securityLevel: "loose",
   themeCSS: `
-  
-  .
+  .node rect, .node circle, .node ellipse, .node polygon, .node path {
+    fill: #193c5f;
+    stroke: #85b3e0;
+    stroke-width: 1px;
+  }
+  .edgePath .path {
+    stroke: #85b3e0;
+    stroke-width: 1.5px;
+  }
+  .label {
+    color: white;
+  }
+  .edgeLabel {
+    background-color: #193c5f;
+    color: white;
+  }
   `,
   fontFamily: "Fira Code",
 });
@@ -46,11 +60,43 @@ export const Mermaid: FC<IMermaid> = ({ chart, name }) => {
   };
 
   return (
-    <div className="relative w-full flex justify-center">
-      <TransformWrapper>
-        <TransformComponent contentClass="w-full" wrapperClass="w-full h-full">
-          <div className="mermaid w-full mb-100">{chart}</div>
-        </TransformComponent>{" "}
+    <div className="relative w-full flex justify-center items-center">
+      <TransformWrapper
+        initialScale={1}
+        minScale={0.5}
+        maxScale={3}
+        wheel={{ step: 0.1 }}
+      >
+        {({ zoomIn, zoomOut, resetTransform }) => (
+          <>
+            <div className="absolute top-2 left-2 z-10 flex gap-2">
+              <button 
+                onClick={() => zoomIn()} 
+                className="btn btn-sm btn-circle bg-gray-700 hover:bg-gray-600 border-0"
+                title="Zoom In"
+              >
+                +
+              </button>
+              <button 
+                onClick={() => zoomOut()} 
+                className="btn btn-sm btn-circle bg-gray-700 hover:bg-gray-600 border-0"
+                title="Zoom Out"
+              >
+                -
+              </button>
+              <button 
+                onClick={() => resetTransform()} 
+                className="btn btn-sm btn-circle bg-gray-700 hover:bg-gray-600 border-0"
+                title="Reset Zoom"
+              >
+                ↺
+              </button>
+            </div>
+            <TransformComponent contentClass="w-full" wrapperClass="w-full h-full">
+              <div className="mermaid w-full p-4">{chart}</div>
+            </TransformComponent>
+          </>
+        )}
       </TransformWrapper>
     </div>
   );

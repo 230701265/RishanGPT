@@ -2,8 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply transition-all duration-300;
+}
+
 .btn-grad {
-    @apply bg-gradient-to-r from-teal-200 to-lime-200 text-black;
+    @apply bg-gradient-to-r from-teal-200 to-lime-200 text-black transition-all duration-300 hover:opacity-90;
 }
 
 .bg-stripe {
@@ -16,6 +20,44 @@
     );
 }
 
-.mermaid svg{
-    margin: 0 auto!important;
+.render-area {
+    @apply bg-[#102E50] rounded-lg shadow-xl p-4 transition-all duration-300;
+}
+
+.mermaid svg {
+    margin: 0 auto !important;
+}
+
+.mermaid {
+    @apply p-4;
+}
+
+.btn {
+    @apply transition-all duration-300;
+}
+
+.input {
+    @apply transition-all duration-300;
+}
+
+.card {
+    @apply transition-all duration-300 hover:shadow-xl;
+}
+
+/* Enhanced scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-800 rounded-lg;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-600 rounded-lg;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
 }
