@@ -96,10 +96,6 @@ Contributions are welcome! Feel free to open an issue or submit a pull request.
 - **Rishan Ruskin** - Lead Developer
 - **Rohit** - Co-Developer
 
-## 📄 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 
 ![Copy of update flowgpt - 14 Apr 23](https://user-images.githubusercontent.com/32486682/232072495-9445eda4-f134-47e0-b2c1-2c359581e020.gif)
 
@@ -123,7 +119,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 2. `cd` into the folder
 ```sh
-cd flowgpt
+cd RishanGPT
 ```
 
 3. Install all deps with yarn
@@ -139,17 +135,3 @@ yarn dev
 5. Open browser and go to http://localhost:3000
 
 
-## Contribution
-it's a pretty new tool, Lots of room for improvement, feel free to contribute.
-
-## Roadmap
-
-- Automatic syntax error detection and retry with history
-- OpenAI API KEY modal to insert from the UI
-- Save flowcharts on localStorage
-- Animated Flowchart Generation (exportable as video)
-
-
-
-## Updates will be posted here
-[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/nil_ooy.svg?style=social&label=Follow%20%40nil_ooy)](https://twitter.com/nil_ooy)
